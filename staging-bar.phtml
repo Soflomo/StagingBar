@@ -1,0 +1,39 @@
+<?php
+/**
+ * Staging bar
+ */
+
+$this->plugin('translate')->setTranslatorTextDomain('staging-bar');
+?>
+
+<style>
+    .staging-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: inline-block;
+        width: 100%;
+        z-index: 2;
+        height: 40px;
+        padding: 5px 10px;
+        background-color: #222;
+        color: white;
+        border-bottom: 1px solid white;
+        font-size: .9em;
+    }
+
+    .staging-bar a {
+        color: white;
+        text-decoration: underline;
+    }
+
+    .staging-bar + * {
+        margin-top: 40px;
+    }
+</style>
+
+<div class="staging-bar">
+    <? $StagingBarLiveUrl = 'http://soflomo.com'?>
+    <span><?= $this->translate("This is the testing website. Be aware thet the content of this site differs from the original site.")?></span>
+    <span><a href="<?= $StagingBarLiveUrl?>"><?= $this->translate("Visit original site")?></a></span>
+</div>
