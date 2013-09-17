@@ -3,6 +3,8 @@ Soflomo StagingBar
 
 The Soflomo StagingBar is a very small Zend Framework 2 module rendering a notification bar at the top of every page. The bar is meant for staging environment to inform visitors the website is only meant for testing purposes and should not be confused with the production version.
 
+![Preview of staging bar](https://raw.github.com/Soflomo/StagingBar/master/Preview.png)
+
 Installation
 ---
 Add "soflomo/staging-bar" to your composer.json file and update your dependencies. Enable
@@ -74,3 +76,28 @@ return array(
 Then copy this dist file to remove the `.dist` extension. Commit the new application config and dist file into your versioning system and make sure to ignore the local application configuration.
 
 Now you can easily enable `Soflomo\StagingBar` in your local application configuration without the struggle to disable it on your development or production versions.
+
+Custom staging bar
+---
+You can override the template used to render this bar. Just create a view script that resolves to `soflomo-staging-bar/partial/staging-bar.phtml` and that file will be rendered. Note the bar contains some inline styles to render the bar correctly. If you override the template, it is suggested to copy these styles as well.
+
+If you do not want to render a script with this long template name, you can use the `template` key in the configuration to modify the location of the template:
+
+```
+'soflomo_staging_bar' => array(
+    'template' => 'here/your/template'
+),
+```
+
+Custom variables
+---
+In your own template, you can inject variables to ease configuration of the bar. The `variables` key in the configuration is mapped to variables in the view model:
+
+
+```
+'soflomo_staging_bar' => array(
+    'variables' => array('foo' => 'bar'),
+),
+```
+
+If you call `$foo` in your template, it will echo `bar`.
