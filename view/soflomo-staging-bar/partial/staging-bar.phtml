@@ -1,9 +1,9 @@
 <?php
 /**
- * Staging bar
+ * Staging bar partial
  */
 
-$this->plugin('translate')->setTranslatorTextDomain('staging-bar');
+$this->plugin('translate')->setTranslatorTextDomain('staging_bar');
 ?>
 
 <style>
@@ -33,7 +33,9 @@ $this->plugin('translate')->setTranslatorTextDomain('staging-bar');
 </style>
 
 <div class="staging-bar">
-    <? $StagingBarLiveUrl = 'http://soflomo.com'?>
-    <span><?= $this->translate("This is the testing website. Be aware thet the content of this site differs from the original site.")?></span>
-    <span><a href="<?= $StagingBarLiveUrl?>"><?= $this->translate("Visit original site")?></a></span>
+    <span><?= $this->translate('This is the testing website. Please note this site is for testing purposes only! If you want to update your website, visit your public website.')?></span>
+
+    <? if (isset($productionUrl)):?>
+        <span><a href="<?= $productionUrl?>"><?= $this->translate('Visit public site.')?></a></span>
+    <? endif ?>
 </div>
