@@ -1,0 +1,33 @@
+{
+    "name": "soflomo/staging-bar",
+    "description": "A staging bar notification for Zend Framework 2 projects",
+    "license": "BSD-3-Clause",
+    "type": "library",
+    "keywords": [
+        "zf2",
+        "notification",
+        "staging"
+    ],
+    "homepage": "https://github.com/Soflomo/StagingBar",
+    "authors": [
+        {
+            "name": "Jurian Sluiman",
+            "email": "jurian@soflomo.com",
+            "homepage": "http://soflomo.com"
+        },
+        {
+            "name": "Jurre Antonisse",
+            "email": "jurre@soflomo.com",
+            "homepage": "http://soflomo.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3.",
+        "zendframework/zend-mvc": ">=2.1.0"
+    },
+    "autoload": {
+        "classmap": [
+            "./Module.php"
+        ]
+    }
+}
